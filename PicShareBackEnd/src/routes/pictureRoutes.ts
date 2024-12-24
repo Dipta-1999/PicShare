@@ -6,7 +6,7 @@ const upload = multer({ dest: "uploads/" });
 const router = express.Router();
 
 router.post("/upload", upload.single("picture"), async (req:any, res:any) => {
-    const { userId } = req.body;
+    const { userId, title } = req.body;
     if (!req.file) {
         return res.status(400).json({ message: "No file uploaded." });
     }
@@ -15,6 +15,7 @@ router.post("/upload", upload.single("picture"), async (req:any, res:any) => {
         const picture = await Picture.create({
             userId,
             imagePath: req.file.path,
+            title,
             favorites: [],
         });
         res.status(201).json(picture);
