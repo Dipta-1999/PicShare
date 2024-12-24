@@ -1,9 +1,11 @@
 import NavbarInitial from "../components/navbar-initial";
 
-const initialPage = () => {
-    <>
-        <NavbarInitial/>
-    </>
+const InitialPage: any = () => {
+    return (
+        <>
+            <NavbarInitial />
+        </>
+    )
 }
 
-export default initialPage;
+export default InitialPage;
