@@ -1,7 +1,9 @@
-import Navbar3 from "../components/navbar3";
+import NavbarInitial from "../components/navbar-initial";
 
 const initialPage = () => {
     <>
-        <Navbar3/>
+        <NavbarInitial/>
     </>
 }
+
+export default initialPage;

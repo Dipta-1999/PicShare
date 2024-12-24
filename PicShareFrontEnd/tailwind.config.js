@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         gothic: ["Century Gothic", "sans-serif"],
         century: ["Century Gothic", "sans-serif"],
+        roboto: ['Roboto Serif', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
