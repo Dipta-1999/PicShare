@@ -1,10 +1,28 @@
-import mongoose from "mongoose";
+// import mongoose from 'mongoose';
 
-const pictureSchema = new mongoose.Schema({
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-    imagePath: { type: String, required: true },
-    title: { type: String, required: true },
-    favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+// const PictureSchema = new mongoose.Schema({
+//   url: { type: String, required: true },
+//   title: { type: String, required: true },
+//   sharedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+//   createdAt: { type: Date, default: Date.now },
+// });
+
+// const Picture = mongoose.model('Picture', PictureSchema);
+// export default Picture;
+
+
+
+
+import mongoose from 'mongoose';
+
+const PictureSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  url: { type: String, required: true },
+  uploadedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  date: { type: Date, default: Date.now },
+  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 });
 
-export default mongoose.model("Picture", pictureSchema);
+const Picture = mongoose.model('Picture', PictureSchema);
+
+export default Picture;
