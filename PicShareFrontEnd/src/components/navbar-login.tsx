@@ -27,10 +27,10 @@ const NavbarLogin: React.FC = () => {
             </div>
             <div className="flex gap-7 items-center">
                 <button
-                    className="w-[80px] md:w-[80px] lg:w-[90px] h-[30px] sm:h-[40px] md:h-[45px] bg-blue-500 rounded-[7px] flex items-center justify-center"
+                    className="w-32 md:w-28 lg:w-32 h-10 sm:h-12 md:h-12 bg-blue-500 rounded-[7px] flex items-center justify-center"
                     onClick={() => navigate("/sharepic")}
                 >
-                    <span className="font-serif  text-lg md:text-lg lg:text-2xl text-white">
+                    <span className="font-serif  text-lg md:text-lg lg:text-xl text-white">
                         Share Pic
                     </span>
                 </button>
@@ -39,10 +39,10 @@ const NavbarLogin: React.FC = () => {
                     Hi {username}
                 </div>
                 <button
-                    className="w-[80px] md:w-[80px] lg:w-[90px] h-[30px] sm:h-[40px] md:h-[45px] bg-blue-500 rounded-[7px] flex items-center justify-center"
+                    className="w-32 md:w-28 lg:w-32 h-10 sm:h-12 md:h-12 bg-blue-500 rounded-[7px] flex items-center justify-center"
                     onClick={() => navigate("/")}
                 >
-                    <span className="font-serif  text-lg md:text-lg lg:text-2xl text-white">
+                    <span className="font-serif  text-lg md:text-lg lg:text-xl text-white">
                         Log Out
                     </span>
                 </button>

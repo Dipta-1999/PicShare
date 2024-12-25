@@ -60,7 +60,7 @@ export const loginUser = async (username: string) => {
 };
 
 export const fetchPictures = async () => {
-  const response = await axios.get(`${API_BASE_URL}/api/pictures`);
+  const response = await axios.get(`${API_BASE_URL}/api/pictures/pictures`);
   return response.data;
 };
 
