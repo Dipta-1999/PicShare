@@ -4,6 +4,16 @@ import connectDB from "./config/db";
 import userRoutes from "./routes/userRoutes";
 import pictureRoutes from "./routes/pictureRoutes";
 import cors from "cors";
+import fs from 'fs';
+import path from 'path';
+
+
+// Ensure uploads directory exists
+const uploadDir = path.join(__dirname, './uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+console.log('Uploads directory ready:', uploadDir);
 
 dotenv.config();
 connectDB();
@@ -20,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/users", userRoutes);
 app.use("/api/pictures", pictureRoutes);
-app.use('/api/uploads', express.static('uploads'));
+app.use('/api/uploads', express.static(path.join(__dirname, './uploads')));
 
 const PORT = process.env.PORT || 5000;
 
