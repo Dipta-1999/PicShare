@@ -28,7 +28,7 @@ const NavbarLogin: React.FC = () => {
             <div className="flex gap-7 items-center">
                 <button
                     className="w-[80px] md:w-[80px] lg:w-[90px] h-[30px] sm:h-[40px] md:h-[45px] bg-blue-500 rounded-[7px] flex items-center justify-center"
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/sharepic")}
                 >
                     <span className="font-serif  text-lg md:text-lg lg:text-2xl text-white">
                         Share Pic

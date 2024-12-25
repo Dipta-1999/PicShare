@@ -1,13 +1,15 @@
 import NavbarInitial from "../components/navbar-initial";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { login } from "../apiCalls/apiCalls";
+import { loginUser } from "../api/api";
 import { useUserContext } from "../context/UserContext";
 
 
 const LoginPage = () => {
     const navigate = useNavigate();
-    const [username, setUsername] = useState("");
+    const [userId, setUserId] = useState<string | null>(localStorage.getItem('userId'));
+    //const [username, setUsername] = useState<string | null>(localStorage.getItem('username'));
+    const [username, setUsername] = useState('');
     const { setUsernameContext } = useUserContext();
     // const handleLogin = async () => {
     //     try{
@@ -32,6 +34,15 @@ const LoginPage = () => {
         
     // };
 
+
+
+    // const handleLogin2 = async () => {
+    //     const user = await loginUser(username);
+    //     localStorage.setItem('userId', user._id);
+    //     alert('Login successful');
+    //     console.log(user._id);
+    //   };
+
     const handleLogin = async () => {
         if (!username) {
             alert("Username is required!");
@@ -39,11 +50,11 @@ const LoginPage = () => {
         }
 
         try {
-            const response = await fetch("/api/users/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username }),
-            });
+            const response = await loginUser(username);
+            //setUserId(userId)
+            //localStorage.setItem('username', username); 
+            //setUserId(userId)
+            //localStorage.setItem('userId', response.b);
 
             if (!response.ok) {
                 throw new Error("Failed to log in");
@@ -52,6 +63,8 @@ const LoginPage = () => {
             const data = await response.json();
             setUsernameContext(data.username);
             console.log("Logged in as:", data);
+            localStorage.setItem('username',data.username);
+            localStorage.setItem('userId', data.userId);
 
             // Navigate to the home page upon successful login
             navigate("/home");
@@ -74,7 +87,7 @@ const LoginPage = () => {
         console.log("Form Data:", data);
 
         try {
-            await login(data);
+            await loginUser(data);
             navigate("/home");
         } catch (error: any) {
             alert(error.response?.data.message);
@@ -106,8 +119,8 @@ const LoginPage = () => {
                                     placeholder="Username"
                                     className="w-full p-2 border border-gray-300 rounded"
                                     value={username}
-                                    required
                                     onChange={(e) => setUsername(e.target.value)}
+                                    required
                                 />
                                 <button
                                     className="w-1/2 py-2 bg-blue-600 text-white rounded shadow "
