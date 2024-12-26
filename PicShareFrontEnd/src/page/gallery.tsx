@@ -40,11 +40,12 @@ const Gallery: React.FC = () => {
           <div
             key={picture._id}
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
-          >
+          >             
+            
             <img
-              src={picture.url}
+              src={`http://localhost:5000/api${picture.url}`}
               alt={picture.title}
-              className="w-full h-40 object-cover"
+              className="w-full h-48 object-cover lg:h-52 md:h-48 sm:h-full p-2"
             />
             <div className="p-4">
               <h2 className="text-lg font-semibold">{picture.title}</h2>

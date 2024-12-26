@@ -11,37 +11,6 @@ const LoginPage = () => {
     //const [username, setUsername] = useState<string | null>(localStorage.getItem('username'));
     const [username, setUsername] = useState('');
     const { setUsernameContext } = useUserContext();
-    // const handleLogin = async () => {
-    //     try{
-    //         const response = await fetch("/api/users/login", {
-    //             method: "POST",
-    //             headers: { "Content-Type": "application/json" },
-    //             body: JSON.stringify({ username }),
-                
-    //         });
-    //         const data = await response.json();
-    //         console.log("Logged in as:", data);
-    //         navigate("/home")
-            
-    //     }
-    //     catch(error:any){
-    //         alert(error.response?.data.message);
-    //         console.error(
-    //             "Registration failed:",
-    //             error.response?.data || error.message
-    //         );
-    //     }
-        
-    // };
-
-
-
-    // const handleLogin2 = async () => {
-    //     const user = await loginUser(username);
-    //     localStorage.setItem('userId', user._id);
-    //     alert('Login successful');
-    //     console.log(user._id);
-    //   };
 
     const handleLogin = async () => {
         if (!username) {
@@ -64,7 +33,7 @@ const LoginPage = () => {
             setUsernameContext(data.username);
             console.log("Logged in as:", data);
             localStorage.setItem('username',data.username);
-            localStorage.setItem('userId', data.userId);
+           localStorage.setItem('userId', data.userId);
 
             // Navigate to the home page upon successful login
             navigate("/home");
@@ -73,34 +42,6 @@ const LoginPage = () => {
             alert("Login failed. Please try again.");
         }
     };
-
-
-
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const formData = new FormData(e.target as HTMLFormElement);
-        const data: any = {
-            username: formData.get("username")?.toString().trim()
-        };
-
-        console.log("Form Data:", data);
-
-        try {
-            await loginUser(data);
-            navigate("/home");
-        } catch (error: any) {
-            alert(error.response?.data.message);
-            console.error(
-                "Registration failed:",
-                error.response?.data || error.message
-            );
-        }
-    };
-
-
-
-
 
     return (
         <>
