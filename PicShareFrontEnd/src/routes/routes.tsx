@@ -9,7 +9,7 @@ import PictureUploadForm from "../components/pictureUpload";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 
-const handleUpload = async (file: File, title: string) => {
+export const handleUpload = async (file: File, title: string) => {
     try {
       const formData = new FormData();
       formData.append('title', title);
@@ -42,8 +42,8 @@ const router = createBrowserRouter([
     { path: "/", element: <InitialPage/> } ,
     { path: "/login", element: <LoginPage/> } ,
     { path: "/home", element: <HomePage/>  },
-    //{ path: "/sharepic", element: <UploadPicture/> }
-    { path: "/sharepic", element: <PictureUploadForm onUpload={handleUpload}/> }
+    { path: "/sharepic", element: <UploadPicture/> }
+    //{ path: "/sharepic", element: <PictureUploadForm onUpload={handleUpload}/> }
 
 ]);
 export default router;

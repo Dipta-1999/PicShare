@@ -1,5 +1,4 @@
-import PictureList from "../components/pictureCard";
-import Gallery from "./gallery";
+import Gallery from "../components/gallery";
 import NavbarLogin from "../components/navbar-login";
 
 const HomePage : any = () => {

@@ -68,7 +68,6 @@ const PictureUploadForm: React.FC<PictureUploadFormProps> = ({ onUpload }) => {
     try {
       console.log(formData)
       onUpload(file, title);
-      setUploading(true);
       setTitle('');
       setFile(null);
     }
@@ -96,7 +95,7 @@ const PictureUploadForm: React.FC<PictureUploadFormProps> = ({ onUpload }) => {
         <div>
           <input
             type="text"
-            placeholder="Enter picture title"
+            placeholder="Image title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="w-full px-4 py-2 border rounded-md"
