@@ -44,7 +44,7 @@
 
 // export default PictureUploadForm;
 import React, { useState } from 'react';
-import { uploadPicture } from '../api/api';
+//import { uploadPicture } from '../api/api';
 
 
 

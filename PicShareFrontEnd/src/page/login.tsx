@@ -7,7 +7,7 @@ import { useUserContext } from "../context/UserContext";
 
 const LoginPage = () => {
     const navigate = useNavigate();
-    const [userId, setUserId] = useState<string | null>(localStorage.getItem('userId'));
+    //const [userId, setUserId] = useState<string | null>(localStorage.getItem('userId'));
     //const [username, setUsername] = useState<string | null>(localStorage.getItem('username'));
     const [username, setUsername] = useState('');
     const { setUsernameContext } = useUserContext();

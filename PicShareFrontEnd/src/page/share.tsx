@@ -1,6 +1,6 @@
 // src/components/ImageUpload.tsx
 import React, { useState } from 'react';
-import { uploadPicture } from '../api/api';
+//import { uploadPicture } from '../api/api';
 import { useNavigate } from 'react-router-dom';
 
 export const UploadPicture: React.FC = () => {

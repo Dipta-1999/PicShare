@@ -1,14 +1,14 @@
 import React from "react";
 
 import { useNavigate } from "react-router-dom";
-import { useUserContext } from "../context/UserContext";
+//import { useUserContext } from "../context/UserContext";
 import { useEffect, useState } from "react";
 
 const NavbarLogin: React.FC = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState<string | null>(null);
     //const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { username } = useUserContext();
+    //const { username } = useUserContext();
 
     useEffect(() => {
         const storedUser = localStorage.getItem("username");
