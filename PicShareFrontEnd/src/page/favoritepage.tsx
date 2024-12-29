@@ -1,14 +1,15 @@
+import Favorites from "../components/favourite";
 import Gallery from "../components/gallery";
 import GalleryHome from "../components/galleryHome";
 import NavbarLogin from "../components/navbar-login";
 
-const HomePage: any = () => {
+const FavoritePage: any = () => {
     return (
         <>
             <NavbarLogin />
             <div className="flex flex-wrap">
                 <div className="flex flex-col items-center justify-center min-h-screen mt-32 w-full p-2">
-                    <GalleryHome/>
+                    <Favorites/>
                 </div>
 
             </div>
@@ -17,4 +18,4 @@ const HomePage: any = () => {
     )
 }
 
-export default HomePage;
+export default FavoritePage;

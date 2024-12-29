@@ -33,19 +33,19 @@ const Gallery: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 items-center justify-center">
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 items-end justify-end">
         {pictures.map((picture) => (
           <div
             key={picture._id}
-            className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 "
+            className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 items-center justify-center"
           >             
             
             <img
               src={`http://localhost:5000/api${picture.url}`}
               alt={picture.title}
-              className="object-contain h-72 "
+              className="object-contain h-72 object-right"
 
             />
             <div className="p-4">
@@ -57,6 +57,7 @@ const Gallery: React.FC = () => {
                 Date: {new Date(picture.date).toLocaleDateString()}
               </p>
             </div>
+            
           </div>
         ))}
       </div>

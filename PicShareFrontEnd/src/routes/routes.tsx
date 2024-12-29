@@ -8,6 +8,7 @@ import { UploadPicture } from "../page/share";
 import PictureUploadForm from "../components/pictureUpload";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import FavoritePage from "../page/favoritepage";
 
 export const handleUpload = async (file: File, title: string) => {
     try {
@@ -42,7 +43,8 @@ const router = createBrowserRouter([
     { path: "/", element: <InitialPage/> } ,
     { path: "/login", element: <LoginPage/> } ,
     { path: "/home", element: <HomePage/>  },
-    { path: "/sharepic", element: <UploadPicture/> }
+    { path: "/sharepic", element: <UploadPicture/> },
+    { path: "/favorite", element: <FavoritePage/> }
     //{ path: "/sharepic", element: <PictureUploadForm onUpload={handleUpload}/> }
 
 ]);

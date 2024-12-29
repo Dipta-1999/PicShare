@@ -36,7 +36,8 @@ const NavbarLogin: React.FC = () => {
                         onClick={() => navigate("/home")}>
                         Home
                     </span>
-                    <span className="font-roboto  text-xl md:text-xl lg:text-xl text-[#4D625F] hover:text-[#00D1FF] cursor-pointer px-4 py-2 sm:px-0">
+                    <span className="font-roboto  text-xl md:text-xl lg:text-xl text-[#4D625F] hover:text-[#00D1FF] cursor-pointer px-4 py-2 sm:px-0"
+                          onClick={() => navigate("/favorite")}>
                         Favorite
                     </span>
                 </div>

@@ -68,8 +68,3 @@ export const uploadPicture = async (formData: FormData) => {
   const response = await axios.post(`${API_BASE_URL}/api/pictures/upload`, formData);
   return response.data;
 };
-
-export const toggleFavorite = async (pictureId: string, userId: string) => {
-  const response = await axios.post(`${API_BASE_URL}/api/pictures/toggleFavorite`, { pictureId, userId });
-  return response.data;
-};
