@@ -154,7 +154,7 @@ const GalleryHome: React.FC = () => {
             <img
               src={`http://localhost:5000/api${selectedPicture.url}`}
               alt={selectedPicture.title}
-              className="object-contain w-screen-md h-screen-md"
+              className="object-contain max-w-screen h-[80vh]"
             />
             <div className="p-4 text-center">
               <h2 className="text-lg font-semibold">{selectedPicture.title}</h2>
@@ -162,7 +162,7 @@ const GalleryHome: React.FC = () => {
                 Uploaded on: {selectedPicture.date}
               </p>
               <button
-                className="mt-4 px-4 py-2 border  text-black rounded-lg"
+                className="mt-4 px-4 py-2 border text-black rounded-lg"
                 onClick={closeModal}
               >
                 Close
