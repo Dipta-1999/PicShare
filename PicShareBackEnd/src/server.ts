@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db";
 import userRoutes from "./routes/userRoutes";
 import pictureRoutes from "./routes/pictureRoutes";
+import favoriteRoutes from './routes/favoriteRoutes';
 import cors from "cors";
 import fs from 'fs';
 import path from 'path';
@@ -31,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/users", userRoutes);
 app.use("/api/pictures", pictureRoutes);
 app.use('/api/uploads', express.static(path.join(__dirname, './uploads')));
+app.use('/api/favorite', favoriteRoutes);
 //app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const PORT = process.env.PORT || 5000;

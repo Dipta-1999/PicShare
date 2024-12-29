@@ -20,7 +20,7 @@ const PictureSchema = new mongoose.Schema({
   url: { type: String, required: true },
   uploadedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   date: { type: Date, default: Date.now },
-  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+  favorites: [{ type: String, ref: 'User' }],
 });
 
 const Picture = mongoose.model('Picture', PictureSchema);
