@@ -101,6 +101,9 @@ const GalleryHome: React.FC = () => {
     }
   };
 
+
+
+
   const openModal = (picture: Picture) => {
     setSelectedPicture(picture);
   };
@@ -108,6 +111,9 @@ const GalleryHome: React.FC = () => {
   const closeModal = () => {
     setSelectedPicture(null);
   };
+
+
+
 
   return (
     <div className="container mx-auto px-4 py-8 items-center justify-center">
@@ -120,7 +126,7 @@ const GalleryHome: React.FC = () => {
             <img
               src={`http://localhost:5000/api${picture.url}`}
               alt={picture.title}
-              className="object-contain h-72 object-right"
+              className="object-contain h-72 object-right cursor-pointer"
               onClick={() => openModal(picture)}
             />
             <div className="p-4 flex justify-between items-center">
@@ -162,7 +168,7 @@ const GalleryHome: React.FC = () => {
                 Uploaded on: {selectedPicture.date}
               </p>
               <button
-                className="mt-4 px-4 py-2 border text-black rounded-lg"
+                className="mt-4 px-4 py-2 border text-black rounded-lg hover:bg-slate-300"
                 onClick={closeModal}
               >
                 Close
