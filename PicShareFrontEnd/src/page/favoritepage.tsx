@@ -8,7 +8,7 @@ const FavoritePage: any = () => {
         <>
             <NavbarLogin />
             <div className="flex flex-wrap">
-                <div className="flex flex-col items-center justify-center min-h-screen mt-32 w-full p-2">
+                <div className="flex flex-col items-center justify-center min-h-screen w-full p-2">
                     <Favorites/>
                 </div>
 

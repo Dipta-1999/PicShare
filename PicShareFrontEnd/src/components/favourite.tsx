@@ -1,4 +1,4 @@
- import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Picture } from '../types';
 // import { FaHeart } from 'react-icons/fa';
 // import { useLocalStorage } from 'react-use'; 
@@ -105,13 +105,25 @@ const Favorites: React.FC = () => {
   }, [userId]);
 
   return (
-    <div className="favorites">
-      {favorites.map(fav => (
-        <div key={fav._id} className="picture-card">
-          <img src={`http://localhost:5000/api${fav.url}`} alt={fav.title} />
-          <h3>{fav.title}</h3>
-        </div>
-      ))}
+    <div className="container mx-auto px-4 py-8 items-center justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 items-end justify-end">
+        {favorites.map(fav => (
+          <div key={fav._id}
+            className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 items-center justify-center"
+          >
+            <img
+              src={`http://localhost:5000/api${fav.url}`}
+              alt={fav.title}
+              className="object-contain h-72 object-right"
+            />
+            <div className="p-4 flex justify-between items-center">
+              <h2 className="text-lg font-semibold">{fav.title}</h2>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 };
